@@ -6,6 +6,7 @@
 2. [Why is System Design so important?](#why-is-system-design-so-important)
 3. [Computer Architecture](#computer-architecture) _(Disk, Memory/RAM, CPU, Cache)_
 4. [Scalability](#scalability) _(Horizontal, Vertical Scaling, Moore's Law)_
+5. [Application Architecture](#application-architecture) _(Load Balancer, Server, Logging)_
 
 ## What is System Design?
 
@@ -40,3 +41,15 @@
 > The number of transistors on a microchip doubles every two years, though the cost of computers is halved. But this can be reaching its limits due to physical constraints in semiconductor manufacturing.
 >
 > — **Moore's Law**
+
+## Application Architecture
+
+High level architecture of a typical web application:
+
+<p align="center">
+  <img src="diagrams/application-architecture.png" alt="Application Architecture" width="600"/>
+</p>
+
+- **Load Balancer** - _distributes incoming network traffic across multiple servers (if horizontal scaling)_
+- **Server** - _handles incoming requests, can also be communicating with other servers, eg. stripe API for payments_
+- **Logging** - _logs all requests and responses, not handled in server for performance, centralized logging_
